@@ -1,0 +1,1432 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: 'default'
+
+<online_storeWindow>:
+    id: main_win
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        FlatButton:
+            id: file_trigger
+            text: 'WELCOME'
+            on_release: file_dropdown.open(self)
+            size_hint: (.1,None)
+            height: 30
+
+            Widget:
+                on_parent: file_dropdown.dismiss()
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: 'exit'
+                        size_hint_y: None
+                        height: 30
+        Label:
+            text: 'FOODMART'
+            bold: True
+            size_hint: (.9,None)
+            height: 30
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 180
+        Image:
+            source: (r'E:\french.jpeg')
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: (1,1)
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        id: content_nav
+        BoxLayout:
+            id: nav_tabs
+            size_hint_x: .3
+            orientation: 'vertical'
+            spacing: 5
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: 'E:\hotdog.jpg'
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                Label:
+                    text: 'MENU'
+                    color: (0,0,0,1)
+                    bold: True
+            ToggleButton:
+                id: reg_toggle
+                text: 'REGISTRATION'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: log_toggle
+                text: 'LOGIN'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: res_toggle
+                text: 'REASTURANT'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: finalcart
+                text: 'ADDITEM'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: cart
+                text: 'CART'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: ord_toggle
+                text: 'ORDER'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.chng_screen(self)
+
+            ToggleButton:
+                id: promotion
+                text: 'PROMOTION'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: payment
+                text: 'PAYMENT'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+
+            ToggleButton:
+                id: feedback_toggle
+                text: 'FEEDBACK'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            
+            
+            ToggleButton:
+                id: complaint_toggle
+                text: 'COMPLAINT'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+            ToggleButton:
+                id: contact_toggle
+                text: 'CONTACTUS'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+                group: 'reg_navs'
+                on_state: root.change_screen(self)
+          
+           
+            
+        
+            Label:
+                id: sp
+                text: ''
+                size_hint_y: .7
+
+            BoxLayout:
+                id: Button_nav
+                size_hint_y: None
+                height: 20
+                Label:
+                    text: ''
+                # Button:
+                #     id: close
+                #     text: 'LogOut'
+                #     color: (0,0,0,1)
+                Label:
+                    text: ''
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+        BoxLayout:
+            id: all_content
+            size_hint_x: .8
+            padding: (10,10)
+            ScreenManager:
+                id: scrn_mngr
+                Screen:
+                    id: scrn_reg_content
+                    name: 'scrn_reg_content'
+                   
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: 10
+                        
+                        
+                        BoxLayout:
+                            orientation: 'vertical'
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            Label:
+                                id: vali
+                                markup: True
+                                text: 'Register Now'
+                                color: (0,0,0,1)
+                                bold: True
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            padding: 5
+                            spacing: 20
+                            canvas.before:
+                                Color:
+                                    rgba: (1,1,1, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    source: 'E:\chips.jpg'
+                            ScrollView:
+                                GridLayout:
+                                    orientation: 'vertical'
+                                    size_hint_y: None
+                                    height: self.minimum_height
+                                    row_default_height: 30
+                                    cols: 2
+                                    padding: 10
+                                    spacing: 10
+                                    Label:
+                                        text: 'First Name'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: fname_field
+                                    Label:
+                                        text: 'Last Name'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: lname_field
+                                    Label:
+                                        text: 'Email'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: email_field1
+                                    Label:
+                                        text: 'OTP'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: emailcode_field
+                                    Label:
+                                        text: 'User Name'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: username_field1
+                                        multiline: False
+                                    Label:
+                                        text: 'Password'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: pass_field
+                                        multiline: False
+                                        password: True
+                                    Label:
+                                        text: 'Phone.No'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: phone_field1
+                                    Label:
+                                        text: 'Address'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: add_field
+                    BoxLayout:
+                        id: Button_nav
+                        size_hint_y: None
+                        height: 30
+                        canvas.before:
+                            Color:
+                                rgba: (.06,.45,.45, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                       
+                        Label:
+                            text: ''
+                        Button:
+                            id: sendcode
+                            text: 'sendcode'
+                            color: (0,0,0,1)
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                            on_release:
+                                root.send_otp()
+                                
+                        Label:
+                            text: ''
+                        Button:
+                            id: register
+                            text: 'Register'
+                            color: (0,0,0,1)
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                            on_release:
+                                root.register_customer(self)
+                                # root.change_screen(self)
+                        Label:
+                            text: ''
+                        Button:
+                            text: 'Clear'
+                            color: (0,0,0,1)
+                            background_normal: ''
+                            on_release:
+                                root.clear_customer(self)
+                            background_color: 1, .3, .4, .85
+                          
+                Screen:
+                    id: scrn_log_content
+                    name: 'scrn_log_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: 20
+                        
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\mixed.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                            
+                            Label:
+                                id: info
+                                text: 'LOGIN'
+                                markup: True
+                                size_hint_y: None
+                                height: 50
+                                color: (0,0,0,1)
+                                bold: True
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                TextInput:
+                                    id: username_field
+                                    hint_text: "Username"
+                                    multiline: False
+                                    focus: True
+                                    on_text_validate: username_field.focus = True
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                TextInput:
+                                    id: pwd_field
+                                    hint_text: "Password"
+                                    multiline: False
+                                    focus: True
+                                    password: True
+                                    on_text_validate: root.validate_customer()
+                                Label:
+                                    text: ''
+                        BoxLayout:
+                            id: Button_nav
+                            Label:
+                                text: ''
+                            Label:
+                                id: sp
+                                size_hint_y: None
+                                height: 20
+                            Button:
+                                id: sig
+                                text: "Sign In"
+                                size_hint_y: None
+                                height: 30
+                                background_color: (.175,.94,.64, 1)
+                                background_normal: ''
+                                on_release:
+                                    root.validate_customer(self)
+                                    # root.chng_screen(self)
+
+                            Label:
+                                id: sp2
+                            Label:
+                                text: ''
+                        BoxLayout:
+                            id: Button_nav2
+                        BoxLayout:
+                            id: Button_nav2
+                Screen:
+                    id: scrn_con_content
+                    name: 'scrn_con_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        
+                        
+                        BoxLayout:
+                            orientation: 'vertical'
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            
+                            Label:
+                                text: 'contactus'
+                                color: (0,0,0,1)
+                                bold: True
+
+                        GridLayout:
+                            cols: 2
+                            padding:10
+                            spacing:10      
+                            canvas.before:
+                                Color:
+                                    rgba: (1, 1, 1,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    source: 'E:\pizzahut.jpg'
+                            
+                            Label:
+                                text: ' Have a question or comment?'
+                                color: (0,0,1,1)
+                                bold: True
+                            
+                            Label:
+                                text: 'Drop us a line'
+                                color: (0,0,1,1)
+                                bold: True
+                        
+                            Label:
+                                text: 'name'
+                                color: (0,1,1,1)
+                                bold: True
+                            TextInput:
+                                id: name_field
+                            Label:
+                                text: 'comment'
+                                color: (0,1,1,1)
+                                bold: True
+                            TextInput:
+                                id: comment_field
+                            Label:
+                                text: 'email'
+                                color: (0,1,1,1)
+                                bold: True
+                            TextInput:
+                                id: email_field
+                            Label:
+                                text: 'phone'
+                                color: (0,1,1,1)
+                                bold: True
+                            TextInput:
+                                id: phone_field
+                                   
+                        BoxLayout:
+                            id: Button_nav
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06,.45,.45, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                          
+                           
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                            Button:
+                                text: 'SUBMIT'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 1, .3, .4, .85
+                                on_release:
+                                    root.sub_com()
+                                    root.change_screen(self)
+                            Label:
+                                text: ''
+                            Button:
+                                text: 'BACK'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 1, .3, .4, .85
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                Screen:
+                    id: scrn_com_content
+                    name: 'scrn_com_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: 10
+                        BoxLayout:
+                            orientation: 'vertical'
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos   
+                            Label:
+                                id: v
+                                markup: True
+                                text: 'complaint'
+                                color: (0,0,0,1)
+                                bold: True
+                        BoxLayout:
+                            orientation: 'vertical'
+                            padding: 5
+                            spacing: 20
+                            canvas.before:
+                                Color:
+                                    rgba: (1,1,1, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    source: 'E:\hotdog.jpg'
+                            ScrollView:
+                                GridLayout:
+                                    orientation: 'vertical'
+                                    size_hint_y: None
+                                    # height: self.minimum_height
+                                    row_default_height: 30
+                                    cols: 2
+                                    padding: 10
+                                    spacing: 10
+                                    Label:
+                                        text: 'orderno'
+                                        color: (0,0,0,1)
+                                        bold: True
+                                        
+                                    TextInput:
+                                        id: number_field
+                                        height: 30
+                                    Label:
+                                        text: 'name'
+                                        color: (0,0,0,1)
+                                        bold: True
+                                    TextInput:
+                                        id: cusname_field
+                                    Label:
+                                        text: 'itemname'
+                                        color: (0,0,0,1)
+                                        bold: True
+                                    TextInput:
+                                        id: item_field
+                                    Label:
+                                        text: 'issue'
+                                        color: (0,0,0,1)
+                                        bold: True
+                                    TextInput:
+                                        id: issue_field       
+                                                
+                        BoxLayout:
+                            id: Button_nav
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06,.45,.45, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                           
+                           
+                            Button:
+                                text: 'SUBMIT'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 1, .3, .4, .85
+                                on_release:
+                                    root.sub_issue()
+                                    # root.change_screen(self)
+                            Label:
+                                text: ''
+                            Button:
+                                text: 'CLEAR'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: (1, .3, .4, .85)
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                Screen:
+                    id: scrn_feedback_content
+                    name: 'scrn_feedback_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: 10
+                        BoxLayout:
+                            orientation: 'vertical'
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos   
+                            Label:
+                                id: v
+                                markup: True
+                                text: 'feedback'
+                                color: (0,0,0,1)
+                                bold: True
+                        BoxLayout:
+                            orientation: 'vertical'
+                            padding: 5
+                            spacing: 20
+                            canvas.before:
+                                Color:
+                                    rgba: (1,1,1, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    source: 'E:\pizza.jpeg'
+                            ScrollView:
+                                GridLayout:
+                                    orientation: 'vertical'
+                                    size_hint_y: None
+                                    # height: self.minimum_height
+                                    row_default_height: 30
+                                    cols: 2
+                                    padding: 10
+                                    spacing: 10
+                                    Label:
+                                        text: 'orderno'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                        
+                                    TextInput:
+                                        id: orderid
+                                        height: 30
+                                    
+                                    Label:
+                                        text: 'Rate order between 1 to 5 '
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: feedback_field       
+                                                
+                        BoxLayout:
+                            id: Button_nav
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06,.45,.45, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                           
+                           
+                            Button:
+                                text: 'SUBMIT'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: 1, .3, .4, .85
+                                on_release: root.feedback()
+                                    # root.change_screen(self)
+                            Label:
+                                text: ''
+                            Button:
+                                text: 'CLEAR'
+                                color: (0,0,0,1)
+                                background_normal: ''
+                                background_color: (1, .3, .4, .85)
+                            Label:
+                                text: ''
+                            Label:
+                                text: ''
+                Screen:
+                    id: scrn_res_content
+                    name: 'scrn_res_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        
+                        BoxLayout:
+                            id: item_nav
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    
+                            Label:
+                                text: 'reasturants'
+                                color: (0,0,0,1)
+                                bold: True
+                    
+                        GridLayout:
+                            cols: 4
+                            padding:10
+                            spacing:10
+                            
+                        
+                            Label:
+                                text: 'Dominos Pizza'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  dominos pizza
+                                text: 'dominos'
+                                background_normal: (r'E:\dominos.jpg')
+                                on_release: root.chng_screen(self)   
+                                    # root.get_items()
+                                    
+                                
+                               
+                                
+
+                            Label:
+                                text: 'Subway'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  subway
+                                text: 'Subway'
+                                background_normal: (r'E:\subway.jpg')
+                                on_release:
+                                    # root.get_items2()
+                                    root.chng_screen(self)
+                                
+                            
+
+                            Label:
+                                text: 'BurgerKing'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  burgerking
+                                text: 'burgerking'
+                                background_normal: (r'E:\burgerking.jpg')
+                                on_release:
+                                    # root.get_items3()
+                                    root.chng_screen(self)
+                               
+                                                
+
+                            Label:
+                                text: 'PizzaHut'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  pizzahut
+                                text: 'pizzahut'
+                                background_normal: (r'E:\pizzahut.jpg')
+                                on_release:
+                                    # root.get_items4()
+                                    root.chng_screen(self)
+                               
+                                
+                            Label:
+                                text: 'Macdonalds'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  macdonalds
+                                text: 'macd'
+                                background_normal: (r'E:\mac.jpg')
+                                on_release:
+                                    # root.get_items5()
+                                    root.chng_screen(self)
+                               
+                            Label:
+                                text: 'Realpeprika'
+                                color: (0,0,0,1)
+                            Button:
+                                id:  realpeprika
+                                text: 'rp'
+                                background_normal: (r'E:\realpep.jpg')
+                                on_release:
+                                    # root.get_item6()
+                                    root.chng_screen(self)
+                            
+                Screen:
+                    id: scrn_item1_content
+                    name: 'scrn_item1_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\choco.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''  
+                                          
+                Screen:
+                    id: scrn_item2_content
+                    name: 'scrn_item2_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\sandwich.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                Screen:
+                    id: scrn_item3_content
+                    name: 'scrn_item3_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:               
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\subway.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                                            
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''          
+                               
+                Screen:
+                    id: scrn_item4_content
+                    name: 'scrn_item4_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\realpep.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                                       
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                Screen:
+                    id: scrn_item5_content
+                    name: 'scrn_item5_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\pizzahut.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                                       
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                            
+                Screen:
+                    id: scrn_item6_content
+                    name: 'scrn_item6_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\mac.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                                       
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                Screen:
+                    id: scrn_item7_content
+                    name: 'scrn_item7_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\mac.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                                       
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+              
+                       
+                        
+
+              
+                Screen:
+                    id: scrn_payment_content
+                    name: 'scrn_payment_content'
+                   
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: 10
+                        
+                        
+                        BoxLayout:
+                            orientation: 'vertical'
+                            size_hint_y: None
+                            height: 30
+                            canvas.before:
+                                Color:
+                                    rgba: (.06, .45, .45,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                            Label:
+                                id: va2
+                                markup: True
+                                text: 'payment'
+                                color: (0,0,0,1)
+                                bold: True
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            padding: 5
+                            spacing: 20
+                            canvas.before:
+                                Color:
+                                    rgba: (1,1,1, 1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                                    source: 'E:\chips.jpg'
+                            ScrollView:
+                                GridLayout:
+                                    orientation: 'vertical'
+                                    size_hint_y: None
+                                    height: self.minimum_height
+                                    row_default_height: 30
+                                    cols: 2
+                                    padding: 10
+                                    spacing: 10
+                                    Label:
+                                        text: 'Name'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: fname_field1
+                                    Label:
+                                        text: 'Phone.No'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: phone_field2
+                                    Label:
+                                        text: 'Address'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: add_field3
+                                    Label:
+                                        text: 'payment mode'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                 
+                                    Spinner:
+                                        id: item10
+                                        text: "Select"                  
+                                        values: ["paytm-8460250047","cash"]       
+                                        # on_text:
+                                        #     if item10.text == "paytm-8460250047": root.ord_content()
+                                        # on_text:
+                                        #     if item10.text == "cash": root.ord_content()
+                                        
+                                    Label:
+                                        text: 'delivery'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                 
+                                    Spinner:
+                                        id: item11
+                                        text: "Select"                  
+                                        values: ["self-pickup","home delivery"]       
+                                        # on_text:
+                                        #     if item11.text == "self-pickup": root.ord_content()
+                                        # on_text:
+                                        #     if item11.text == "home delivery": root.ord_content()
+                                        
+                                    Label:
+                                        text: 'promocode'
+                                        color: (1,1,1,1)
+                                        bold: True
+                                    TextInput:
+                                        id: promocode12
+                                       
+                                        
+                                   
+                                    Label:
+                                        text: 'total price'
+                                        color: (1,1,1,1)
+                                    Button:
+                                        id: totalprice
+                                        text: 'total'
+                                        color: (0,0,0,1)
+                                        background_normal: ''
+                                        background_color: 1, .3, .4, .85
+                                        on_release:
+                                            root.total()
+                                    
+                                    Label:
+                                        text: ''
+                                        color: (0,0,0,1)
+
+                                    Button:
+                                        text: 'order now'
+                                        on_release: root.ord_content()
+
+                                        color: (0,0,0,1)
+                                        background_normal: ''
+                                        background_color: 1, .3, .4, .85
+                Screen:
+                    id: scrn_finalcart_content
+                    name: 'scrn_finalcart_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\realpep.jpg'
+                        Label:
+                            text: 'ADD'
+                            color: (0,0,0,1)
+                            bold: True
+                        Spinner:
+                            id: item
+                            text: "dominos pizza"                  
+                            values: ["brochete","cheese mania","ham & chese","dominos delux","meatzza"]       
+                            on_text: if item.text == "brochete": root.ins_cart() 
+                            on_text: if item.text == "cheese mania": root.ins_cart2()
+                            on_text: if item.text == "ham & chese": root.ins_cart3() 
+                            on_text: if item.text == "dominos delux": root.ins_cart4()
+                            on_text: if item.text == "meatzza": root.ins_cart5()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                        Spinner:
+                            id: item2
+                            text: "subway"                  
+                            values: ["french fries","snack wrap","happy meal","rice meals","fanta"]
+                            on_text: if item2.text == "french fries": root.ins_cart6() 
+                            on_text: if item2.text == "snack wrap": root.ins_cart7()
+                            on_text: if item2.text == "happy meal": root.ins_cart8() 
+                            on_text: if item2.text == "rice meals": root.ins_cart9()
+                            on_text: if item2.text == "fanta": root.ins_cart10()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85       
+                            
+                        Spinner:
+                            id: item3
+                            text: "burgerking"                  
+                            values: ["neapolitan","chicago","margerita","stuffed garlic bread","choco lava cake"]       
+                            on_text: if item3.text == "neapolitan": root.ins_cart11() 
+                            on_text: if item3.text == "chicago": root.ins_cart12()
+                            on_text: if item3.text == "margerita": root.ins_cart13() 
+                            on_text: if item3.text == "stuffed garlic bread": root.ins_cart14()
+                            on_text: if item3.text == "choco lava cake": root.ins_cart15()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                        Spinner:
+                            id: item4
+                            text: "pizza hut"                  
+                            values: ["pizza","noodeles","indian touch","pasta","unlimited"]       
+                            on_text: if item4.text == "pizza": root.ins_cart16() 
+                            on_text: if item4.text == "noodeles": root.ins_cart17()
+                            on_text: if item4.text == "indian touch": root.ins_cart18() 
+                            on_text: if item4.text == "pasta": root.ins_cart19()
+                            on_text: if item4.text == "unlimited": root.ins_cart20()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85 
+                        Spinner:
+                            id: item5
+                            text: "macdonalds"                  
+                            values: ["double chese","whopper jr","stakehouse","rodeo","big king"]       
+                            on_text: if item5.text == "double chese": root.ins_cart21() 
+                            on_text: if item5.text == "whopper jr": root.ins_cart22()
+                            on_text: if item5.text == "stakehouse": root.ins_cart23() 
+                            on_text: if item5.text == "rodeo": root.ins_cart24()
+                            on_text: if item5.text == "big king": root.ins_cart25()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                        Spinner:
+                            id: item6
+                            text: "real peprika"                  
+                            values: ["cold cut combo","black forest ham","sandwich","chapata chana","green veg"]       
+                            on_text: if item6.text == "cold cut combo": root.ins_cart26() 
+                            on_text: if item6.text == "black forest ham": root.ins_cart27()
+                            on_text: if item6.text == "sandwich": root.ins_cart28() 
+                            on_text: if item6.text == "chapata chana": root.ins_cart29()
+                            on_text: if item6.text == "green veg": root.ins_cart30()
+                                     
+                            background_normal: ''
+                            background_color: 1, .3, .4, .85
+                        Label:
+                            text: 'REMOVE'
+                            color: (0,0,0,1)
+                            bold: True
+                        Spinner:
+                            id: d1
+                            text: "dominos pizza"                  
+                            values: ["brochete","cheese mania","ham & chese","dominos delux","meatzza"]       
+                            on_text: if d1.text == "brochete": root.del_cart() 
+                            on_text: if d1.text == "cheese mania": root.del_cart2()
+                            on_text: if d1.text == "ham & chese": root.del_cart3() 
+                            on_text: if d1.text == "dominos delux": root.del_cart4()
+                            on_text: if d1.text == "meatzza": root.del_cart5()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65
+                        Spinner:
+                            id: d2
+                            text: "subway"                  
+                            values: ["french fries","snack wrap","happy meal","rice meals","fanta"]
+                            on_text: if d2.text == "french fries": root.del_cart6() 
+                            on_text: if d2.text == "snack wrap": root.del_cart7()
+                            on_text: if d2.text == "happy meal": root.del_cart8() 
+                            on_text: if d2.text == "rice meals": root.del_cart9()
+                            on_text: if d2.text == "fanta": root.del_cart10()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65       
+                            
+                        Spinner:
+                            id: d3
+                            text: "burgerking"                  
+                            values: ["neapolitan","chicago","margerita","stuffed garlic bread","choco lava cake"]       
+                            on_text: if d3.text == "neapolitan": root.del_cart11() 
+                            on_text: if d3.text == "chicago": root.del_cart12()
+                            on_text: if d3.text == "margerita": root.del_cart13() 
+                            on_text: if d3.text == "stuffed garlic bread": root.del_cart14()
+                            on_text: if d3.text == "choco lava cake": root.del_cart15()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65
+                        Spinner:
+                            id: d4
+                            text: "pizza hut"                  
+                            values: ["pizza","noodeles","indian touch","pasta","unlimited"]       
+                            on_text: if d4.text == "pizza": root.del_cart16() 
+                            on_text: if d4.text == "noodeles": root.del_cart17()
+                            on_text: if d4.text == "indian touch": root.del_cart18() 
+                            on_text: if d4.text == "pasta": root.del_cart19()
+                            on_text: if d4.text == "unlimited": root.del_cart20()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65 
+                        Spinner:
+                            id: d5
+                            text: "macdonalds"                  
+                            values: ["double chese","whopper jr","stakehouse","rodeo","big king"]       
+                            on_text: if d5.text == "double chese": root.del_cart21() 
+                            on_text: if d5.text == "whopper jr": root.del_cart22()
+                            on_text: if d5.text == "stakehouse": root.del_cart23() 
+                            on_text: if d5.text == "rodeo": root.del_cart24()
+                            on_text: if d5.text == "big king": root.del_cart25()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65
+                        Spinner:
+                            id: d6
+                            text: "real peprika"                  
+                            values: ["cold cut combo","black forest ham","sandwich","chapata chana","green veg"]       
+                            on_text: if d6.text == "cold cut combo": root.del_cart26() 
+                            on_text: if d6.text == "black forest ham": root.del_cart27()
+                            on_text: if d6.text == "sandwich": root.del_cart28() 
+                            on_text: if d6.text == "chapata chana": root.del_cart29()
+                            on_text: if d6.text == "green veg": root.del_cart30()
+                                     
+                            background_normal: ''
+                            background_color: 0, .3, .4, .65
+                       
+
+                Screen:
+                    id: scrn_c_content
+                    name: 'scrn_c_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\choco.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    id: total
+                                    text: ""
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''  
+                                            
+                Screen:
+                    id: scrn_promo_content
+                    name: 'scrn_promo_content'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 5
+                        spacing: (10,10)
+                        canvas.before:
+                            Color:
+                                rgba: (1,1,1, 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'E:\choco.jpg'
+                        BoxLayout:
+                            orientation: "vertical"
+                            spacing: 10
+                            size_hint_y: None
+                            height: 140
+                            GridLayout:
+                                cols: 3
+                                rols: 2
+                                spacing: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                                Label:
+                                    id: total
+                                    text: ""
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''  
+                                            
+      
+                        
+              
+                    
+                       
+            

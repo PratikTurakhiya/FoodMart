@@ -1,0 +1,524 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: 'default'
+
+<superadmin>:
+    id: main_win
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: (r'C:\Users\ssali\Pictures\Saved Pictures\mallll.jpg')
+    # VideoPlayer:
+    #     source: (r'C:\Users\ssali\Desktop\report 30 mar\Zaza ft Rofhiwa Manyaga - Agere Pachigaro (Live at Soweto).mp4')
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\mydream.jpg')
+        FlatButton:
+            id: file_trigger
+            text: 'x'
+            on_release: file_dropdown.open(self)
+            size_hint: (.1,None)
+            height: 30
+            Widget:
+                on_parent: file_dropdown.dismiss()
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: 'exit'
+                        size_hint_y: None
+                        height: 30
+        Label:
+            text: 'FOODMART MALL'
+            bold: True
+            color: (1,0,0,1)
+            size_hint: (.9,None)
+            height: 30
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 180
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\french.jpeg')
+    BoxLayout:
+        id: content_nav
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\mallll.jpg')
+        ScreenManager:
+            id: srn_mgn_main
+            Screen:
+                id: top_main_screen
+                name: 'top_main_screen' 
+                BoxLayout:
+                    id: main_box
+                    BoxLayout:
+                        id: toggles
+                        size_hint_x: .3
+                        padding:(10,10)
+                        BoxLayout:
+                            id: nav_tabs
+                            # size_hint_x: .3
+                            orientation: 'vertical'
+                            spacing: 5
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1,1,1, 1)
+                            #     Rectangle:
+                            #         size: self.size
+                            #         pos: self.pos
+                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (2).jpg')
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+                                Label:
+                                    text: 'MENU'
+                                    color: (0,0,0,1)
+                                    bold: True
+                                    markup: True
+                            ToggleButton:
+                                id: log_toggle
+                                text: 'LOGIN'
+                                size_hint_y: .2
+                                height: 20
+                                state: 'down'
+                                color: (0,1,1,1)
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'reg_navs'
+                                on_state: root.change_screen(self)
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .7
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .3
+
+                            BoxLayout:
+                                id: Button_nav
+                                size_hint_y: None
+                                height: 20
+                                Label:
+                                    text: ''
+                                # Button:
+                                #     id: close
+                                #     text: 'LogOut'
+                                #     color: (0,0,0,1)
+                                Label:
+                                    text: ''
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+                    BoxLayout:
+                        id: all_content
+                        size_hint_x: .8
+                        padding: (10,10)
+                        ScreenManager:
+                            id: scrn_mngr
+                            Screen:
+                                id: scrn_log_content
+                                name: 'scrn_log_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    # canvas.before:
+                                    #     Color:
+                                    #         rgba: (1,1,1, 1)
+                                    #     Rectangle:
+                                    #         size: self.size
+                                    #         pos: self.pos
+                                    #         # source: (r'C:\Users\ssali\Pictures\Saved Pictures\download.jpg')
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        Label:
+                                            id: info
+                                            text: 'LOGIN'
+                                            markup: True
+                                            size_hint_y: None
+                                            height: 50
+                                            color: (0,0,1,1)
+                                            bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            TextInput:
+                                                id: user_field
+                                                hint_text: "username"
+                                                multiline: False
+                                                focus: True
+                                                on_text_validate: user_field.focus = True
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            TextInput:
+                                                id: pass_field
+                                                hint_text: "password"
+                                                multiline: False
+                                                focus: True
+                                                password: True
+                                                on_text_validate: root.validate_storeuser()
+                                            Label:
+                                                text: ''
+                                    BoxLayout:
+                                        id: Button_nav
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            id: sp
+                                            size_hint_y: None
+                                            height: 20
+                                        Button:
+                                            id: log_field
+                                            text: "Sign in"
+                                            size_hint_y: None
+                                            height: 30
+                                            color: (0,1,1,1)
+                                            background_color: (.08, .95, .95, 1)
+                                            on_release: 
+                                                root.validate_storeuser(self)
+                                        Label:
+                                            id: sp2
+                                        Label:
+                                            text: ''
+                                    BoxLayout:
+                                        id: Button_nav2
+                                    BoxLayout:
+                                        id: Button_nav2          
+            Screen:
+                id: sec_main_screen
+                name: 'sec_main_screen'
+                BoxLayout:
+                    id: main_box
+                    BoxLayout:
+                        id: toggles2
+                        size_hint_x: .3
+                        padding:(10,10)
+                        BoxLayout:
+                            id: nav_tabs2
+                            # size_hint_x: .3
+                            orientation: 'vertical'
+                            spacing: 5
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1,1,1, 1)
+                            #     Rectangle:
+                            #         size: self.size
+                            #         pos: self.pos
+                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (2).jpg')
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+                                Label:
+                                    text: 'MENU'
+                                    color: (0,0,0,1)
+                                    bold: True
+                                    markup: True
+                            ToggleButton:
+                                id: user_toggle
+                                text: 'Admin Users'
+                                size_hint_y: .2
+                                height: 30
+                                state: 'down'
+                                color: (0,1,1,1)
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: store_toggle
+                                text: 'Store Information'
+                                size_hint_y: .2
+                                color: (0,1,1,1)
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .3
+                            BoxLayout:
+                                id: Button_nav
+                                size_hint_y: None
+                                height: 30
+                                Label:
+                                    text: ''
+                                Button:
+                                    id: exit_dash
+                                    text: 'Exit Dash'
+                                    color: (0,1,1,1)
+                                    background_color: (.08, .95, .95, 1)
+                                    on_release: root.change_dash_main(self)
+                                Label:
+                                    text: ''
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 20
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .7
+                    BoxLayout:
+                        id: all_content
+                        size_hint_x: .8
+                        padding: (10,10)
+                        ScreenManager:
+                            id: scrn_admin_mngr
+                            Screen:
+                                id: scrn_cust_content
+                                name: 'scrn_cust_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                            Screen:
+                                id: scrn_user_content
+                                name: 'scrn_user_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_user_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            # canvas.before:
+                                            #     Color:
+                                            #         rgba: (1,1,1, 1)
+                                            #     Rectangle:
+                                            #         size: self.size
+                                            #         pos: self.pos
+                                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (1).jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infouser
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_entry_mngr
+                                            Screen:
+                                                id: scrn_entry_content
+                                                name: 'scrn_entry_content'
+                                                BoxLayout:
+                                                    id: entry_field1
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: fname_field1
+                                                        hint_text: 'name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: user_field1
+                                                        hint_text: 'Username'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: pass_field1
+                                                        hint_text: 'Password'
+                                                        password: True
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: des_field1
+                                                        text: 'Designation'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Manager','Officer']
+                                                    Button:
+                                                        id: submit_user
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_user_fields()
+                                            Screen:
+                                                id: scrn_entry2_content
+                                                name: 'scrn_entry2_content'
+                                                BoxLayout:
+                                                    id: entry_field2
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: user_field2
+                                                        hint_text: 'user no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: username_field2
+                                                        hint_text: 'username'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: pass_field2
+                                                        hint_text: 'password'
+                                                        password: True
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: des_field2
+                                                        text: 'Designation'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Manager','Officer']
+                                                    Button:
+                                                        id: submit_update
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.update_user()
+                                            Screen:
+                                                id: scrn_entry3_content
+                                                name: 'scrn_entry3_content'
+                                                BoxLayout:
+                                                    id: entry_field3
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: user_id_field3
+                                                        hint_text: 'user_id'
+                                                        multiline: True
+                                                    Button:
+                                                        id: submit_remove
+                                                        text: 'Remove'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_user()
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''         
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: crud_add
+                                            text: 'Add User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)
+                                        Button:
+                                            id: crud_update
+                                            text: 'Update User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)
+                                        Button:
+                                            id: crud_remove
+                                            text: 'Remove User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)                        
+                            Screen:
+                                id: scrn_store_content
+                                name: 'scrn_store_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_store_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            # canvas.before:
+                                            #     Color:
+                                            #         rgba: (1,1,1, 1)
+                                            #     Rectangle:
+                                            #         size: self.size
+                                            #         pos: self.pos
+                                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (1).jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infostore
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_store_mngr
+                                            Screen:
+                                                id: scrn_store_delete
+                                                name: 'scrn_store_delete'
+                                                BoxLayout:
+                                                    id: delete_field3
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: store_id_field3
+                                                        hint_text: 'Store no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: submit_remove
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_store()
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''         
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                                        Button:
+                                            id: store_remove
+                                            text: 'Remove Store'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_store_screen(self) 
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''

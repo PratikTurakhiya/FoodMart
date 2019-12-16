@@ -1,0 +1,1466 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: 'default'
+
+<online_storeWindow>:
+    id: main_win
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: (r'C:\Users\ssali\Pictures\Saved Pictures\mallll.jpg')
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\chips.jpg')
+        FlatButton:
+            id: file_trigger
+            text: 'x'
+            on_release: file_dropdown.open(self)
+            size_hint: (.1,None)
+            height: 30
+            Widget:
+                on_parent: file_dropdown.dismiss()
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: 'exit'
+                        size_hint_y: None
+                        height: 30
+        Label:
+            text: 'FOODMART STORES'
+            bold: True
+            color: (1,0,0,1)
+            markup: True
+            size_hint: (.9,None)
+            height: 30
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 180
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\spag.jpg')
+        BoxLayout:
+            id: main_box
+            BoxLayout:
+                size_hint_x: .3
+                padding:(10,10)
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 5
+            BoxLayout:
+                size_hint_x: .8
+                padding: (5,5)
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    # canvas.before:
+                    #     Color:
+                    #         rgba: (1,1,1, 1)
+                    #     Rectangle:
+                    #         size: self.size
+                    #         pos: self.pos
+                    #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\mallll.jpg')
+            BoxLayout:
+                size_hint_x: .3
+                padding:(10,10)
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 5
+    BoxLayout:
+        id: content_nav
+        # canvas.before:
+        #     Color:
+        #         rgba: (1,1,1, 1)
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\mallll.jpg')
+        ScreenManager:
+            id: srn_mgn_main
+            Screen:
+                id: top_main_screen
+                name: 'top_main_screen' 
+                BoxLayout:
+                    id: main_box
+                    BoxLayout:
+                        id: toggles
+                        size_hint_x: .3
+                        padding:(10,10)
+                        BoxLayout:
+                            id: nav_tabs
+                            # size_hint_x: .3
+                            orientation: 'vertical'
+                            spacing: 5
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1,1,1, 1)
+                            #     Rectangle:
+                            #         size: self.size
+                            #         pos: self.pos
+                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (2).jpg')
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+                                Label:
+                                    text: 'MENU'
+                                    color: (0,0,0,1)
+                                    bold: True
+                                    markup: True
+                            ToggleButton:
+                                id: reg_toggle
+                                text: 'REGISTRATION'
+                                size_hint_y: .2
+                                state: 'down'
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'reg_navs'
+                                on_state: root.change_screen(self)
+                            ToggleButton:
+                                id: log_toggle
+                                text: 'LOGIN'
+                                size_hint_y: .2
+                                state: 'down'
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'reg_navs'
+                                on_state: root.change_screen(self)
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .7
+                            Label:
+                                id: sp
+                                text: ''
+                                size_hint_y: .3
+
+                            BoxLayout:
+                                id: Button_nav
+                                size_hint_y: None
+                                height: 20
+                                Label:
+                                    text: ''
+                                Label:
+                                    text: ''
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+
+                    BoxLayout:
+                        id: all_content
+                        size_hint_x: .8
+                        padding: (10,10)
+                        ScreenManager:
+                            id: scrn_mngr
+                            Screen:
+                                id: scrn_mall_content
+                                name: 'scrn_mall_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                            Screen:
+                                id: scrn_reg_content
+                                name: 'scrn_reg_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    # canvas.before:
+                                    #     Color:
+                                    #         rgba: (1, 1, 1,1)
+                                    #     Rectangle:
+                                    #         size: self.size
+                                    #         pos: self.pos
+                                    #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download.jpg')
+                                    BoxLayout:
+                                        orientation: 'vertical'
+                                        size_hint_y: None
+                                        height: 30
+                                        Label:
+                                            id: info_field
+                                            text: 'REGISTER NOW'
+                                            color: (0,0,1,1)
+                                            bold: True
+                                            markup: True
+                                    BoxLayout:
+                                        orientation: 'vertical'
+                                        padding: 5
+                                        spacing: 20
+                                        ScrollView:
+                                            GridLayout:
+                                                orientation: 'vertical'
+                                                size_hint_y: None
+                                                height: self.minimum_height
+                                                row_default_height: 30
+                                                cols: 2
+                                                padding: 10
+                                                spacing: 10
+                                                Label:
+                                                    text: 'Store Name'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: store_field
+                                                Label:
+                                                    text: 'Branch Name'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: branch_field
+                                                Label:
+                                                    text: 'Address'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: address_field1
+                                                    multiline: True
+                                                Label:
+                                                    text: 'Email Address'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: email_field1
+                                                Label:
+                                                    text: 'Phone Number'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: phone_field1
+                                                Label:
+                                                    text: 'Store Type'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: type_field
+                                                Label:
+                                                    text: 'Store Description'
+                                                    color: (0,0,1,1)
+                                                    bold: True
+                                                    markup: True
+                                                TextInput:
+                                                    id: des_field
+                                                    multiline: True
+                                    BoxLayout:
+                                        id: Button_nav
+                                        size_hint_y: None
+                                        height: 30
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                                        Button:
+                                            text: 'Register'
+                                            color: (0,1,1,1)
+                                            background_color: (.08, .95, .95, 1)
+                                            on_release: 
+                                                root.register_store(self)
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            text: ''
+                            Screen:
+                                id: scrn_log_content
+                                name: 'scrn_log_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    # canvas.before:
+                                    #     Color:
+                                    #         rgba: (1,1,1, 1)
+                                    #     Rectangle:
+                                    #         size: self.size
+                                    #         pos: self.pos
+                                    #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download.jpg')
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        Label:
+                                            id: info
+                                            text: 'LOGIN'
+                                            markup: True
+                                            size_hint_y: None
+                                            height: 50
+                                            color: (0,0,1,1)
+                                            bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            TextInput:
+                                                id: user_field
+                                                hint_text: "username"
+                                                multiline: False
+                                                focus: True
+                                                on_text_validate: user_field.focus = True
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            TextInput:
+                                                id: pass_field
+                                                hint_text: "password"
+                                                multiline: False
+                                                focus: True
+                                                password: True
+                                                on_text_validate: root.validate_storeuser()
+                                            Label:
+                                                text: ''
+                                    BoxLayout:
+                                        id: Button_nav
+                                        Label:
+                                            text: ''
+                                        Label:
+                                            id: sp
+                                            size_hint_y: None
+                                            height: 20
+                                        Button:
+                                            id: log_field
+                                            text: "Sign in"
+                                            size_hint_y: None
+                                            height: 30
+                                            color: (0,1,1,1)
+                                            background_color: (.08, .95, .95, 1)
+                                            on_release: 
+                                                root.validate_storeuser(self)
+                                        Label:
+                                            id: sp2
+                                        Label:
+                                            text: ''
+                                    BoxLayout:
+                                        id: Button_nav2
+                                    BoxLayout:
+                                        id: Button_nav2          
+            Screen:
+                id: sec_main_screen
+                name: 'sec_main_screen'
+                BoxLayout:
+                    id: main_box
+                    BoxLayout:
+                        id: toggles2
+                        size_hint_x: .3
+                        padding:(10,10)
+                        BoxLayout:
+                            id: nav_tabs2
+                            # size_hint_x: .3
+                            orientation: 'vertical'
+                            spacing: 5
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1,1,1, 1)
+                            #     Rectangle:
+                            #         size: self.size
+                            #         pos: self.pos
+                            #         source: (r'C:\Users\ssali\Pictures\Saved Pictures\download (2).jpg')
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 50
+                                Label:
+                                    text: 'MENU'
+                                    color: (0,0,0,1)
+                                    bold: True
+                            ToggleButton:
+                                id: user_toggle
+                                text: 'Manage Store Users'
+                                size_hint_y: .2
+                                state: 'down'
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: item_toggle
+                                text: 'Manage Items'
+                                size_hint_y: .2
+                                state: 'down'
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: ord_toggle
+                                text: 'Manage Orders'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: promo_toggle
+                                text: 'Manage Promotions'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: deli_toggle
+                                text: 'Manage Deliveries'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: boys_toggle
+                                text: 'Manage Delivery Boys'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: comp_toggle
+                                text: 'View Complaints'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            ToggleButton:
+                                id: feed_toggle
+                                text: 'View Feedbacks'
+                                size_hint_y: .2
+                                background_color: (.09, .65, 65, 1)
+                                background_normal: ''
+                                group: 'admin_navs'
+                                on_state: root.change_screen2(self)
+                            BoxLayout:
+                                id: Button_nav
+                                size_hint_y: None
+                                height: 30
+                                Label:
+                                    text: ''
+                                Button:
+                                    id: exit_dash
+                                    text: 'Exit Dash'
+                                    color: (0,1,1,1)
+                                    background_color: (.08, .95, .95, 1)
+                                    on_release: root.change_dash_main(self)
+                                Label:
+                                    text: ''
+                            BoxLayout:
+                                size_hint_y: None
+                                height: 20
+                    BoxLayout:
+                        id: all_content
+                        size_hint_x: .8
+                        padding: (10,10)
+                        ScreenManager:
+                            id: scrn_admin_mngr
+                            Screen:
+                                id: scrn_dash_content
+                                name: 'scrn_dash_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_dash_board
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+
+                            Screen:
+                                id: scrn_user_content
+                                name: 'scrn_user_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_user_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: info2
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_entry_mngr
+                                            Screen:
+                                                id: scrn_entry_content
+                                                name: 'scrn_entry_content'
+                                                BoxLayout:
+                                                    id: entry_field1
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: fname_field1
+                                                        hint_text: 'first name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: lname_field1
+                                                        hint_text: 'last name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: user_field1
+                                                        hint_text: 'username'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: pass_field1
+                                                        hint_text: 'password'
+                                                        password: True
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: des_field1
+                                                        text: 'Designation'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Operator','Clerk','Admin']
+                                                    Spinner:
+                                                        id: depart_field1
+                                                        text: 'Department'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Sales','Administartor']
+                                                    Button:
+                                                        id: submit_user
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_user_fields()
+                                            Screen:
+                                                id: scrn_entry2_content
+                                                name: 'scrn_entry2_content'
+                                                BoxLayout:
+                                                    id: entry_field2
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: user_field2
+                                                        hint_text: 'user no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: username_field2
+                                                        hint_text: 'username'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: pass_field2
+                                                        hint_text: 'password'
+                                                        password: True
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: des_field2
+                                                        text: 'Designation'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Operator','Admin','Clerk']
+                                                    Spinner:
+                                                        id: depart_field2
+                                                        text: 'Department'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Sales','Admin']
+                                                    Button:
+                                                        id: submit_update
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.update_user()
+                                            Screen:
+                                                id: scrn_entry3_content
+                                                name: 'scrn_entry3_content'
+                                                BoxLayout:
+                                                    id: entry_field3
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: user_id_field3
+                                                        hint_text: 'user no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: submit_remove
+                                                        text: 'Remove'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_user()
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''         
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: crud_add
+                                            text: 'Add User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)
+                                        Button:
+                                            id: crud_update
+                                            text: 'Update User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)
+                                        Button:
+                                            id: crud_remove
+                                            text: 'Remove User'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_entry_screen(self)
+                            Screen:
+                                id: scrn_item_content
+                                name: 'scrn_item_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_item_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infoitem
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field2
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_item_entry
+                                            Screen:
+                                                id: scrn_item
+                                                name: 'scrn_item'
+                                                BoxLayout:
+                                                    id: item_entry_field
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: item_field1
+                                                        hint_text: 'item name'
+                                                    TextInput:
+                                                        id: desc_field1
+                                                        hint_text: 'description'
+                                                    Spinner:
+                                                        id: cat_field1
+                                                        text: 'select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['veg','non-veg']
+                                                    Spinner:
+                                                        id: subcat_field1
+                                                        text: 'select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['drinks','spice foods','non-spice']
+                                                    TextInput:
+                                                        id: qty_field1
+                                                        hint_text: 'Quantity'
+                                                    TextInput:
+                                                        id: price_field1
+                                                        hint_text: 'Price'
+                                                    Spinner:
+                                                        id: promo_status_field1
+                                                        text: 'select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['On Promotion','********']
+                                                    Button:
+                                                        id: submit_add
+                                                        text: 'submit'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_item_fields() 
+                                            Screen:
+                                                id: scrn_update
+                                                name: 'scrn_update'
+                                                BoxLayout:
+                                                    id: update_entry_field
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: item_id_field2
+                                                        hint_text: 'item no'
+                                                    TextInput:
+                                                        id: qty_field2
+                                                        hint_text: 'Quantity'
+                                                    TextInput:
+                                                        id: price_field2
+                                                        hint_text: 'Price'
+                                                    Spinner:
+                                                        id: promo_status_field2
+                                                        text: 'select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['on promotion','********']
+                                                    Button:
+                                                        id: submit_update_item
+                                                        text: 'update'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.update_item()
+                                            Screen:
+                                                id: scrn_delete
+                                                name: 'scrn_delete'
+                                                BoxLayout:
+                                                    id: delete_entry_field
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: item_id_field3
+                                                        hint_text: 'item no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: submit_remove_item
+                                                        text: 'delete'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_item()
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''         
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: add_item
+                                            text: 'Add Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_item_entry_screen(self)
+                                        Button:
+                                            id: item_update
+                                            text: 'Update Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_item_entry_screen(self)
+                                        Button:
+                                            id: item_remove
+                                            text: 'Delete Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_item_entry_screen(self)                       
+                            Screen:
+                                id: scrn_ord_content
+                                name: 'scrn_ord_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScreenManager:
+                                        id: scrn_ord_cont
+                                        Screen:
+                                            id: scrn_ord_content_manage
+                                            name: 'scrn_ord_content_manage'
+                                            BoxLayout:
+                                                orientation: 'vertical'
+                                                spacing: 10
+                                                ScrollView:
+                                                    BoxLayout:
+                                                        id: scrn_ord_contents
+                                                        orientation: 'vertical'
+                                                        spacing: 2
+                                                        canvas.before:
+                                                            Color:
+                                                                rgba: (1,1,1, 1)
+                                                            Rectangle:
+                                                                size: self.size
+                                                                pos: self.pos 
+                                                                source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                                BoxLayout:
+                                                    size_hint_y: None
+                                                    height: 10
+                                                    Label:
+                                                        id: inforder
+                                                        text: ''
+                                                        markup: True
+                                                        bold: True
+                                                BoxLayout:
+                                                    id: ops_field3
+                                                    spacing: 10
+                                                    size_hint_y: None
+                                                    height: 30
+                                                    ScreenManager:
+                                                        id: scrn_ord_view
+                                                        Screen:
+                                                            id: scrn_ord_delete
+                                                            name: 'scrn_ord_delete'
+                                                            BoxLayout:
+                                                                id: ord_del_field
+                                                                spacing: 5
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                                                # TextInput:
+                                                                #     id: ord_id_field2
+                                                                #     hint_text: 'order no'
+                                                                #     multiline: True
+                                                                # Button:
+                                                                #     id: submit_delete_order
+                                                                #     text: 'Delete'
+                                                                #     color: (0,1,1,1)
+                                                                #     background_color: (.09, .105, .105, 1)
+                                                                #     on_release: root.delete_order()
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                                        Screen:
+                                                            id: scrn_del_delete
+                                                            name: 'scrn_del_delete' 
+                                                            BoxLayout:
+                                                                id: ord_del_field2
+                                                                spacing: 5
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                                                TextInput:
+                                                                    id: status_field2
+                                                                    hint_text: 'order no'
+                                                                    multiline: True
+                                                                Spinner:
+                                                                    id: order_status
+                                                                    text: 'select'
+                                                                    color: (0,1,1,1)
+                                                                    background_color: (.08, .95, .95, 1)
+                                                                    values: ['Cancelled','Out for Delivery', 'Delivered']
+                                                                Button:
+                                                                    id: submit_delete_order
+                                                                    text: 'update'
+                                                                    color: (0,1,1,1)
+                                                                    background_color: (.09, .105, .105, 1)
+                                                                    on_release: root.update_order_status()
+                                                                Label:
+                                                                    text: ''
+                                                                Label:
+                                                                    text: ''
+                                        Screen:
+                                            id: scrn_ord_control_out
+                                            name: 'scrn_ord_control_out'
+                                            ScrollView:
+                                                BoxLayout:
+                                                    id: scrn_ord_contents1
+                                                    orientation: 'vertical'
+                                                    spacing: 2
+                                                    canvas.before:
+                                                        Color:
+                                                            rgba: (1,1,1, 1)
+                                                        Rectangle:
+                                                            size: self.size
+                                                            pos: self.pos 
+                                                            source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                        Screen:
+                                            id: scrn_ord_control_del
+                                            name: 'scrn_ord_control_del'
+                                            ScrollView:
+                                                BoxLayout:
+                                                    id: scrn_ord_contents2
+                                                    orientation: 'vertical'
+                                                    spacing: 2
+                                                    canvas.before:
+                                                        Color:
+                                                            rgba: (1,1,1, 1)
+                                                        Rectangle:
+                                                            size: self.size
+                                                            pos: self.pos 
+                                                            source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                        Screen:
+                                            id: scrn_ord_cancel
+                                            name: 'scrn_ord_cancel'
+                                            ScrollView:
+                                                BoxLayout:
+                                                    id: scrn_ord_contents3
+                                                    orientation: 'vertical'
+                                                    spacing: 2
+                                                    canvas.before:
+                                                        Color:
+                                                            rgba: (1,1,1, 1)
+                                                        Rectangle:
+                                                            size: self.size
+                                                            pos: self.pos 
+                                                            source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: order_manage
+                                            text: 'Order Manage'
+                                            color: (0,1,1,1)
+                                            background_color: (.06, .25, 25, 1)
+                                            on_release: root.change_order_control_screen(self)
+                                        Button:
+                                            id: add_order_status
+                                            text: 'update status'
+                                            color: (0,1,1,1)
+                                            background_color: (.08, .95, .95, 1)
+                                            on_release: root.change_order_screen(self)
+                                        Label:
+                                            id: delete_order
+                                            text: ''
+                                            # color: (0,1,1,1)
+                                            # background_color: (.08, .95, .95, 1)
+                                            # on_release: root.change_order_screen(self)
+                                        Label:
+                                            id: Popup
+                                            text: ''      
+                                        Button:
+                                            id: view_cancelled_orders
+                                            text: 'Cancelled'
+                                            color: (0,1,1,1)
+                                            background_color: (.06, .25, 25, 1)
+                                            on_release: root.change_order_control_screen(self)
+                                        Button:
+                                            id: out_order
+                                            text: 'Out For Delivery'
+                                            color: (0,1,1,1)
+                                            background_color: (.06, .25, 25, 1)
+                                            on_release: root.change_order_control_screen(self)
+                                        Button:
+                                            id: deliver_order
+                                            text: 'Delivered'
+                                            color: (0,1,1,1)
+                                            background_color: (.06, .25, 25, 1)
+                                            on_release: root.change_order_control_screen(self)
+                            Screen:
+                                id: scrn_promo_content
+                                name: 'scrn_promo_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_promo_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infopromo
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field4
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_promo_add_item
+                                            Screen:
+                                                id: scrn_promo_add
+                                                name: 'scrn_promo_add'
+                                                BoxLayout:
+                                                    id: promo_add_field
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: item_promo_field
+                                                        hint_text: 'item no'
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: start_promo_field
+                                                        hint_text: 'start date'
+                                                        # on_focus: root.setDate()
+                                                    TextInput:
+                                                        id: end_promo_field
+                                                        hint_text: 'end date'
+                                                    TextInput:
+                                                        id: code_promo_field
+                                                        hint_text: 'promo code'
+                                                    TextInput:
+                                                        id: discount_field
+                                                        hint_text: 'discount'
+                                                    Button:
+                                                        id: add_promo_item
+                                                        text: 'add'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_promo_item_fields()
+                                            Screen:
+                                                id: scrn_promo_update
+                                                name: 'scrn_promo_update'
+                                                BoxLayout:
+                                                    id: promo_update
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: promo_field_update
+                                                        hint_text: 'Promo no'
+                                                    TextInput:
+                                                        id: start_promo_update
+                                                        hint_text: 'start date'
+                                                    TextInput:
+                                                        id: end_promo_update
+                                                        hint_text: 'end date'
+                                                    TextInput:
+                                                        id: discount_field_update
+                                                        hint_text: 'discount'
+                                                    Button:
+                                                        id: update_promo_item
+                                                        text: 'update'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.promo_update_item()
+                                            Screen:
+                                                id: scrn_promo_delete
+                                                name: 'scrn_promo_delete'
+                                                BoxLayout:
+                                                    id: promo_delete
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: promo_id_field2
+                                                        hint_text: 'promotion no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: promo_delete_item
+                                                        text: 'delete'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_promo_item()
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: crud_promo
+                                            text: 'Add Promo Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_promo_screen(self)
+                                        Button:
+                                            id: crud_update
+                                            text: 'Update Promo Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_promo_screen(self)
+                                        Button:
+                                            id: crud_delete
+                                            text: 'Delete Promo Item'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_promo_screen(self)
+                
+                            Screen:
+                                id: scrn_deli_content
+                                name: 'scrn_deli_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_deli_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infodeli
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field6
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: scrn_delivery_boy
+                                            Screen:
+                                                id: scrn_deli_add
+                                                name: 'scrn_deli_add'
+                                                BoxLayout:
+                                                    id: boy_add_field
+                                                    spacing: 5
+                                                    Label:
+                                                        text:''
+                                                    TextInput:
+                                                        id: date_field2
+                                                        hint_text: 'delivery date'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: orderNo_field2
+                                                        hint_text: 'order no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: dboy_field2
+                                                        hint_text: 'delivery boy no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: delivery_add
+                                                        text: 'Add'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_delivery()
+                                            Screen:
+                                                id: scrn_deli_update
+                                                name: 'scrn_deli_update'
+                                                BoxLayout:
+                                                    id: update_deli_field
+                                                    spacing: 5
+                                                    Label:
+                                                        text:''
+                                                    TextInput:
+                                                        id: delivery_update_field3
+                                                        hint_text: 'delivery no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: date_field3
+                                                        hint_text: 'delivery date'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: orderNo_field3
+                                                        hint_text: 'order no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: dboy_field3
+                                                        hint_text: 'delivery boy no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: delivery_update
+                                                        text: 'update'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.update_delivery() 
+                                            Screen:
+                                                id: scrn_deli_delete
+                                                name: 'scrn_deli_delete'
+                                                BoxLayout:
+                                                    id: delete_deli_field
+                                                    spacing: 5
+                                                    Label:
+                                                        text:''
+                                                    Label:
+                                                        text:''
+                                                    TextInput:
+                                                        id: date_field4
+                                                        hint_text: 'delivery no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: delivery_delete
+                                                        text: 'delete'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_delivery()
+                                                    Label:
+                                                        text:''
+                                                    Label:
+                                                        text:''            
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: crud_deli
+                                            text: 'Assign Delivery'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_delivery_screen(self)
+                                        Button:
+                                            id: crud_deli
+                                            text: 'Update Delivery'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_delivery_screen(self)
+                                        Button:
+                                            id: crud_deli
+                                            text: 'Delete Delivery'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_delivery_screen(self)
+
+                            Screen:
+                                id: scrn_deliboy_content
+                                name: 'scrn_deliboy_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_deliboy_contents
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: 10
+                                        Label:
+                                            id: infoboy
+                                            text: ''
+                                            markup: True
+                                            bold: True
+                                    BoxLayout:
+                                        id: ops_field5
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        ScreenManager:
+                                            id: deliveryboy
+                                            Screen:
+                                                id: dboy_add
+                                                name: 'dboy_add'
+                                                BoxLayout:
+                                                    id: dboy_field
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: fname_field_boy
+                                                        hint_text: 'first name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: lname_field_boy
+                                                        hint_text: 'last name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: email_field_boy
+                                                        hint_text: 'email address'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: address_field_boy
+                                                        hint_text: 'address'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: phone_field_boy
+                                                        hint_text: 'phone_no'
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: area_field_boy
+                                                        text: 'Select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Paldi','Narol']
+                                                    Button:
+                                                        id: dboy_add_btn
+                                                        text: 'Add'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.add_dboy_fields()
+                                            Screen:
+                                                id: dboy_update
+                                                name: 'dboy_update'
+                                                BoxLayout:
+                                                    id: dboy_field_update
+                                                    spacing: 5
+                                                    TextInput:
+                                                        id: dboy_field_no
+                                                        hint_text: 'delivery boy no'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: fname_field_boy2
+                                                        hint_text: 'first name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: lname_field_boy2
+                                                        hint_text: 'last name'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: email_field_boy2
+                                                        hint_text: 'email address'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: address_field_boy2
+                                                        hint_text: 'address'
+                                                        multiline: True
+                                                    TextInput:
+                                                        id: phone_field_boy2
+                                                        hint_text: 'phone no'
+                                                        multiline: True
+                                                    Spinner:
+                                                        id: area_field_boy2
+                                                        text: 'Select'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.08, .95, .95, 1)
+                                                        values: ['Paldi','Narol']
+                                                    Button:
+                                                        id: dboy_add_btn
+                                                        text: 'Update'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.update_dboy_fields()
+                                            Screen:
+                                                id: dboy_delete
+                                                name: 'dboy_delete'
+                                                BoxLayout:
+                                                    id: dboy_field_update
+                                                    spacing: 5
+                                                    Label:
+                                                        text: ''
+                                                    Label:
+                                                        text: ''
+                                                    TextInput:
+                                                        id: fname_field_boy3
+                                                        hint_text: 'delivery boy no'
+                                                        multiline: True
+                                                    Button:
+                                                        id: dboy_add_btn2
+                                                        text: 'Delete'
+                                                        color: (0,1,1,1)
+                                                        background_color: (.09, .105, .105, 1)
+                                                        on_release: root.delete_delivery_boy()
+                                    BoxLayout:
+                                        id: ops_btns
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 30
+                                        Button:
+                                            id: crud_boy
+                                            text: 'Add Delivery Boy'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_deliveryboy_screen(self)
+                                        Button:
+                                            id: crud_replace
+                                            text: 'Update Delivery Boy'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_deliveryboy_screen(self)
+                                        Button:
+                                            id: crud_remove
+                                            text: 'Remove Delivery Boy'
+                                            color: (0,1,1,1)
+                                            background_color: (.09, .65, 65, 1)
+                                            on_release: root.change_deliveryboy_screen(self)
+                            Screen:
+                                id: scrn_comp_content
+                                name: 'scrn_comp_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_complaint
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
+                            Screen:
+                                id: scrn_feed_content
+                                name: 'scrn_feed_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    spacing: 10
+                                    ScrollView:
+                                        BoxLayout:
+                                            id: scrn_feedback
+                                            orientation: 'vertical'
+                                            spacing: 2
+                                            canvas.before:
+                                                Color:
+                                                    rgba: (1,1,1, 1)
+                                                Rectangle:
+                                                    size: self.size
+                                                    pos: self.pos 
+                                                    source: (r'C:\Users\ssali\Pictures\Saved Pictures\kfc.jpg')
