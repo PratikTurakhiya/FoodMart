@@ -1,0 +1,274 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: 'default'
+
+<userWindow>:
+    id: main_win
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (0,255,255,0.7)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        canvas.before:
+            Color:
+                rgba: (.06, .60, .70,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    
+        
+        FlatButton:
+            id: file_trigger
+            text: 'WELCOME!'
+            on_release: file_dropdown.open(self)
+            size_hint: (.1,None)
+            height: 30
+
+            Widget:
+                on_parent: file_dropdown.dismiss()
+            
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: 'exit'
+                        size_hint_y: None
+                        height: 30
+        Label:
+            text: 'FOODMART'
+            bold: True
+            size_hint: (.8,None)
+            height: 30
+
+    BoxLayout:
+        size_hint_y: None
+        height: 180
+        Image:
+            source: (r'E:\1498580192329.jpg')
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: (1,1)
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        id: content_nav
+        
+        BoxLayout:
+            id: nav_tabs
+            size_hint_x: .3
+            orientation: 'vertical'
+            spacing: 5
+            canvas.before:
+                Color:
+                    rgba: (.06, .52, .52,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                Label:
+                    text: 'MENU'
+                    color: (0,0,0,1)
+                    bold: True
+            ToggleButton:
+                id: item
+                text: 'Profile'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: user
+                text: 'Foods'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: ord
+                text: 'Reasturant'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: promo
+                text: 'Promotions'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: deli
+                text: 'Orders'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: dper
+                text: 'complaints'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: comp
+                text: 'contact us'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            Label:
+                id: sp
+                text: ''
+                size_hint_y: .7
+
+            BoxLayout:
+                id: Button_nav
+                size_hint_y: None
+                height: 20
+                Label:
+                    text: ''
+                Button:
+                    id: close
+                    text: 'LogOut'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+
+        BoxLayout:
+            id: content
+            orientation: 'vertical'
+            size_hint_x: .8
+            padding: 20
+       
+            BoxLayout:
+                id: item_nav
+                size_hint_y: None
+                height: 30
+                canvas.before:
+                    Color:
+                        rgba: (.06, .45, .45,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: 'reasturants'
+                    color: (0,0,0,1)
+                    bold: True
+           
+            GridLayout:
+                cols: 4
+                padding:10
+                spacing:10
+            
+                Label:
+                    text: 'Dominos Pizza'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\dominos.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+                    
+
+                Label:
+                    text: 'Subway'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\subway.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+                 
+
+                Label:
+                    text: 'BurgerKing'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\burgerking.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+                                    
+
+                Label:
+                    text: 'PizzaHut'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\pizzahut.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+                    
+                Label:
+                    text: 'Macdonalds'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\mac.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+                Label:
+                    text: 'Realpeprika'
+                    color: (0,0,0,1)
+                Button:
+                    Image:
+                        source: (r'E:\realpep.jpg')
+                        y: self.parent.y + self.parent.height - 100
+                        x: self.parent.x
+                        size: 120,120
+                        allow_stretch: True
+
+         
+
+                
+                       
+            
+            BoxLayout:
+                id: Button_nav
+                size_hint_y: None
+                height: 30
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+                Button:
+                    text: 'DOWN'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+                Button:
+                    text: 'UP'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+                
+

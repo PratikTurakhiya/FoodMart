@@ -1,0 +1,241 @@
+<FlatButton@ButtonBehavior+Label>:
+    text: 'default'
+
+<userWindow>:
+    id: main_win
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    
+    BoxLayout:
+        id: top_nav
+        size_hint_y: None
+        height: 30
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+        FlatButton:
+            id: file_trigger
+            text: 'file'
+            on_release: file_dropdown.open(self)
+            size_hint: (.1,None)
+            height: 30
+
+            Widget:
+                on_parent: file_dropdown.dismiss()
+            
+                DropDown:
+                    id: file_dropdown
+                    Button:
+                        id: close
+                        text: 'exit'
+                        size_hint_y: None
+                        height: 30
+        Label:
+            text: 'Store Admin Management'
+            bold: True
+            size_hint: (.9,None)
+            height: 30
+
+    BoxLayout:
+        size_hint_y: None
+        height: 180
+
+    BoxLayout:
+        id: content_nav
+        
+        BoxLayout:
+            id: nav_tabs
+            size_hint_x: .3
+            orientation: 'vertical'
+            spacing: 5
+            canvas.before:
+                Color:
+                    rgba: (.06, .52, .52,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                Label:
+                    text: 'MENU'
+                    color: (0,0,0,1)
+                    bold: True
+            ToggleButton:
+                id: item
+                text: 'Item Entry'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: user
+                text: 'Admin User'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: ord
+                text: 'View Order'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: promo
+                text: 'Promotions'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: deli
+                text: 'Delivery Manage'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: dper
+                text: 'Delivery Person'
+                size_hint_y: .2
+                state: 'down'
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            ToggleButton:
+                id: comp
+                text: 'View Complaints'
+                size_hint_y: .2
+                background_color: (.06, .47, .47, 1)
+                background_normal: ''
+            Label:
+                id: sp
+                text: ''
+                size_hint_y: .7
+
+            BoxLayout:
+                id: Button_nav
+                size_hint_y: None
+                height: 20
+                Label:
+                    text: ''
+                Button:
+                    id: close
+                    text: 'LogOut'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+
+        BoxLayout:
+            id: content
+            orientation: 'vertical'
+            size_hint_x: .8
+            padding: 20
+
+            BoxLayout:
+                id: item_nav
+                size_hint_y: None
+                height: 30
+                canvas.before:
+                    Color:
+                        rgba: (.06, .45, .45,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: 'ADMIN USER'
+                    color: (0,0,0,1)
+                    bold: True
+
+            GridLayout:
+                cols: 2
+                padding:10
+                spacing:10
+
+                Label:
+                    text: 'User_id'
+                    color: (0,0,0,1)
+                TextInput:
+
+                Label:
+                    text: 'firstName'
+                    color: (0,0,0,1)
+                TextInput:
+
+                Label:
+                    text: 'LastName'
+                    color: (0,0,0,1)
+                TextInput:
+
+                Label:
+                    text: 'Email'
+                    color: (0,0,0,1)
+                TextInput:
+                Label:
+                    text: 'Phone.No'
+                    color: (0,0,0,1)
+                TextInput:
+                Label:
+                    text: 'Address'
+                    color: (0,0,0,1)
+                TextInput:
+                Label:
+                    text: 'Designation'
+                    color: (0,0,0,1)
+                Spinner:
+                    id: cat
+                    text: "Select"                  
+                    values: ["Manager","Clerk"]       
+                    on_text:
+                        root.on_spinner_select(text)
+                Label:
+                    text: 'Department'
+                    color: (0,0,0,1)
+                Spinner:
+                    id: subcat
+                    text: "Select"                  
+                    values: ["Sales","Administration"]       
+                    on_text:
+                        root.on_spinner_select(text)
+            BoxLayout:
+                id: Button_nav
+                size_hint_y: None
+                height: 30
+                canvas.before:
+                    Color:
+                        rgba: (1,1,1, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    text: ''
+                Label:
+                    text: ''
+                Button:
+                    text: 'Replace'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+                Button:
+                    text: 'Submit'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+                Button:
+                    text: 'Delete'
+                    color: (0,0,0,1)
+                Label:
+                    text: ''
+                
+

@@ -1,0 +1,191 @@
+Screen:
+                                id: scrn_item2_content
+                                name: 'scrn_item2_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (.06,.45,.45, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        # Label:
+                                        #     id: info
+                                        #     text: 'LOGIN'
+                                        #     markup: True
+                                        #     size_hint_y: None
+                                        #     height: 50
+                                        #     color: (0,0,0,1)
+                                        #     bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                            Screen:
+                                id: scrn_item3_content
+                                name: 'scrn_item3_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (.06,.45,.45, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        # Label:
+                                        #     id: info
+                                        #     text: 'LOGIN'
+                                        #     markup: True
+                                        #     size_hint_y: None
+                                        #     height: 50
+                                        #     color: (0,0,0,1)
+                                        #     bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                            Screen:
+                                id: scrn_item4_content
+                                name: 'scrn_item4_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (.06,.45,.45, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        # Label:
+                                        #     id: info
+                                        #     text: 'LOGIN'
+                                        #     markup: True
+                                        #     size_hint_y: None
+                                        #     height: 50
+                                        #     color: (0,0,0,1)
+                                        #     bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                            Screen:
+                                id: scrn_item5_content
+                                name: 'scrn_item5_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (.06,.45,.45, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        # Label:
+                                        #     id: info
+                                        #     text: 'LOGIN'
+                                        #     markup: True
+                                        #     size_hint_y: None
+                                        #     height: 50
+                                        #     color: (0,0,0,1)
+                                        #     bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                            
+                            Screen:
+                                id: scrn_item6_content
+                                name: 'scrn_item6_content'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    padding: 5
+                                    spacing: (10,10)
+                                    canvas.before:
+                                        Color:
+                                            rgba: (.06,.45,.45, 1)
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+                                    BoxLayout:
+                                        orientation: "vertical"
+                                        spacing: 10
+                                        size_hint_y: None
+                                        height: 140
+                                        # Label:
+                                        #     id: info
+                                        #     text: 'LOGIN'
+                                        #     markup: True
+                                        #     size_hint_y: None
+                                        #     height: 50
+                                        #     color: (0,0,0,1)
+                                        #     bold: True
+                                        GridLayout:
+                                            cols: 3
+                                            rols: 2
+                                            spacing: 20
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''
+                                            Label:
+                                                text: ''

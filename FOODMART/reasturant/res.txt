@@ -1,0 +1,246 @@
+ def get_items(self):
+    
+        conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+        cursor = conn.cursor() 
+
+        _items = OrderedDict()
+        _items['item_id'] = {}
+        _items['item_name'] = {}
+        _items['price'] = {}
+        item_id = []
+        item_name = []
+        description = []
+        category = []
+        subcategory = []
+        quantity = []
+        price = []
+
+        query = ("select *from items")
+        cursor.execute(query)
+
+        items = cursor.fetchall()
+
+        for item in items:
+            item_id.append(item[0])
+            item_name.append(item[1])
+            description.append(item[2])
+            category.append(item[3])
+            subcategory.append(item[4])
+            quantity.append(item[5])
+            price.append(item[6])
+        
+        items_length = len(item_id)
+        idx = 0
+        while idx < items_length:
+            _items['item_id'][idx] = item_id[idx]
+            _items['item_name'][idx] = item_name[idx]
+            _items['price'][idx] = price[idx]
+
+            idx += 1
+        
+        return _items
+    def get_items2(self):
+            
+            conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+            cursor = conn.cursor() 
+
+            _items = OrderedDict()
+            _items['item_id'] = {}
+            _items['item_name'] = {}
+            _items['price'] = {}
+            item_id = []
+            item_name = []
+            description = []
+            category = []
+            subcategory = []
+            quantity = []
+            price = []
+
+            query = ("select *from items2")
+            cursor.execute(query)
+
+            items2 = cursor.fetchall()
+
+            for item in items2:
+                item_id.append(item[0])
+                item_name.append(item[1])
+                description.append(item[2])
+                category.append(item[3])
+                subcategory.append(item[4])
+                quantity.append(item[5])
+                price.append(item[6])
+            
+            items_length = len(item_id)
+            idx = 0
+            while idx < items_length:
+                _items['item_id'][idx] = item_id[idx]
+                _items['item_name'][idx] = item_name[idx]
+                _items['price'][idx] = price[idx]
+
+                idx += 1
+            
+            return _items
+    def get_items3(self):
+            
+            conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+            cursor = conn.cursor() 
+
+            _items = OrderedDict()
+            _items['item_id'] = {}
+            _items['item_name'] = {}
+            _items['price'] = {}
+            item_id = []
+            item_name = []
+            description = []
+            category = []
+            subcategory = []
+            quantity = []
+            price = []
+
+            query = ("select *from items3")
+            cursor.execute(query)
+
+            items3 = cursor.fetchall()
+
+            for item in items3:
+                item_id.append(item[0])
+                item_name.append(item[1])
+                description.append(item[2])
+                category.append(item[3])
+                subcategory.append(item[4])
+                quantity.append(item[5])
+                price.append(item[6])
+            
+            items_length = len(item_id)
+            idx = 0
+            while idx < items_length:
+                _items['item_id'][idx] = item_id[idx]
+                _items['item_name'][idx] = item_name[idx]
+                _items['price'][idx] = price[idx]
+
+                idx += 1
+            
+            return _items
+    def get_items4(self):
+            
+            conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+            cursor = conn.cursor() 
+
+            _items = OrderedDict()
+            _items['item_id'] = {}
+            _items['item_name'] = {}
+            _items['price'] = {}
+            item_id = []
+            item_name = []
+            description = []
+            category = []
+            subcategory = []
+            quantity = []
+            price = []
+
+            query = ("select *from items4")
+            cursor.execute(query)
+
+            items4 = cursor.fetchall()
+
+            for item in items4:
+                item_id.append(item[0])
+                item_name.append(item[1])
+                description.append(item[2])
+                category.append(item[3])
+                subcategory.append(item[4])
+                quantity.append(item[5])
+                price.append(item[6])
+            
+            items_length = len(item_id)
+            idx = 0
+            while idx < items_length:
+                _items['item_id'][idx] = item_id[idx]
+                _items['item_name'][idx] = item_name[idx]
+                _items['price'][idx] = price[idx]
+
+                idx += 1
+            
+            return _items
+    def get_items5(self):
+            
+            conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+            cursor = conn.cursor() 
+
+            _items = OrderedDict()
+            _items['item_id'] = {}
+            _items['item_name'] = {}
+            _items['price'] = {}
+            item_id = []
+            item_name = []
+            description = []
+            category = []
+            subcategory = []
+            quantity = []
+            price = []
+
+            query = ("select *from items")
+            cursor.execute(query)
+
+            items5 = cursor.fetchall()
+
+            for item in items5:
+                item_id.append(item[0])
+                item_name.append(item[1])
+                description.append(item[2])
+                category.append(item[3])
+                subcategory.append(item[4])
+                quantity.append(item[5])
+                price.append(item[6])
+            
+            items_length = len(item_id)
+            idx = 0
+            while idx < items_length:
+                _items['item_id'][idx] = item_id[idx]
+                _items['item_name'][idx] = item_name[idx]
+                _items['price'][idx] = price[idx]
+
+                idx += 1
+            
+            return _items
+    def get_items6(self):
+            
+            conn = MySQLdb.connect(host='localhost', user='root',password='hello1324', database='foodmart')
+            cursor = conn.cursor() 
+
+            _items = OrderedDict()
+            _items['item_id'] = {}
+            _items['item_name'] = {}
+            _items['price'] = {}
+            item_id = []
+            item_name = []
+            description = []
+            category = []
+            subcategory = []
+            quantity = []
+            price = []
+
+            query = ("select *from items6")
+            cursor.execute(query)
+
+            items6 = cursor.fetchall()
+
+            for item in items6:
+                item_id.append(item[0])
+                item_name.append(item[1])
+                description.append(item[2])
+                category.append(item[3])
+                subcategory.append(item[4])
+                quantity.append(item[5])
+                price.append(item[6])
+            
+            items_length = len(item_id)
+            idx = 0
+            while idx < items_length:
+                _items['item_id'][idx] = item_id[idx]
+                _items['item_name'][idx] = item_name[idx]
+                _items['price'][idx] = price[idx]
+
+                idx += 1
+            
+            return _items
